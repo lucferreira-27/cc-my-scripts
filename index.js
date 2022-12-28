@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const { MongoClient,ObjectID } = require('mongodb');
+const { parentPort } = require("worker_threads");
 
 app.use(bodyParser.json()) // parse application/json
 app.use(bodyParser.urlencoded({ extended: true })) // parse application/x-www-form-urlencoded
@@ -33,6 +34,10 @@ const updateLogDocument = async (document,data) =>{
   console.log(result)
   return result.modifiedCount > 0
 }
+
+app.get("/",(req,res) =>{
+    res.redirect('/farmland/log');
+})
 
 app.get('/farmland/log', async (req, res) => {
   try {
