@@ -37,6 +37,10 @@ app.post('/farmland/log', async (req, res) => {
   try {
     // Connect to the MongoDB database
     const db = client.db()
+    let collectionExist = await db.listCollections().find({ name: "logs" }).hasNext();
+    if (!collectionExist){
+      await db.createCollection('logs')
+    }
     await db.createCollection('logs')
     console.log(logData)
 
