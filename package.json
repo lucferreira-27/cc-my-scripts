@@ -1,0 +1,22 @@
+{
+  "name": "cc-my-scripts",
+  "version": "1.0.0",
+  "description": "cc-my-scripts is a repository for storing and organizing personal computer craft scripts. These scripts can be easily accessed and managed online, making it easier to use and share them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucferreira-27/cc-my-scripts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucferreira-27/cc-my-scripts/issues"
+  },
+  "homepage": "https://github.com/lucferreira-27/cc-my-scripts#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
