@@ -52,6 +52,9 @@ app.post('/farmland/log', async (req, res) => {
   }
 })
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Server listening on port 3000')
-})
+client.connect(err => {
+  if(err){ console.error(err); return false;}
+  app.listen(PORT, () => {
+      console.log("listening for requests");
+  })
+});
