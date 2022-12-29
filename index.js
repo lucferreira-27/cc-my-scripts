@@ -1,12 +1,11 @@
 require("dotenv").config();
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
 const { MongoClient,ObjectID } = require('mongodb');
 const { parentPort } = require("worker_threads");
 
-app.use(bodyParser.json()) // parse application/json
-app.use(bodyParser.urlencoded({ extended: true })) // parse application/x-www-form-urlencoded
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'}));
 
 const TOKEN = process.env.TOKEN
 const PORT = process.env.PORT | 3000
